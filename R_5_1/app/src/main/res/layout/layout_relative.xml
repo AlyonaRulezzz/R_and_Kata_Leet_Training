@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/buttonCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="center"
+        android:layout_centerInParent="true" />
+
+    <View
+        android:id="@+id/topView"
+        android:layout_width="10dp"
+        android:layout_height="100dp"
+        android:background="#FCB586"
+        android:layout_marginBottom="4dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/buttonCenter" />
+
+    <View
+        android:id="@+id/bottomView"
+        android:layout_width="10dp"
+        android:layout_height="100dp"
+        android:background="#1AEF12"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/buttonCenter" />
+
+    <View
+        android:id="@+id/leftView"
+        android:layout_width="50dp"
+        android:layout_height="10dp"
+        android:background="#1EBFE8"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="5dp"
+        android:layout_toStartOf="@id/buttonCenter" />
+
+    <View
+        android:id="@+id/rightView"
+        android:layout_width="50dp"
+        android:layout_height="10dp"
+        android:background="#F824DB"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@id/buttonCenter" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Top Left"
+        android:textColor="@color/white"
+        android:background="@color/purple_200"
+        android:padding="4dp"
+        android:layout_alignLeft="@id/leftView"
+        android:layout_alignTop="@id/topView"
+        android:layout_marginTop="-10dp"
+        android:layout_marginLeft="-10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Top Right"
+        android:textColor="@color/white"
+        android:background="@color/purple_200"
+        android:padding="4dp"
+        android:layout_alignRight="@id/rightView"
+        android:layout_alignTop="@id/topView" />
+
+    <TextView
+        android:id="@+id/bottomLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bottom Left"
+        android:textColor="@color/white"
+        android:background="@color/purple_200"
+        android:padding="4dp"
+        android:layout_alignLeft="@id/leftView"
+        android:layout_alignBottom="@id/bottomView" />
+
+    <TextView
+        android:id="@+id/bottomRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bottom Right"
+        android:textColor="@color/white"
+        android:background="@color/purple_200"
+        android:padding="4dp"
+        android:layout_alignRight="@id/rightView"
+        android:layout_alignBottom="@id/bottomView" />
+
+    <TextView
+        android:id="@+id/topLeftParent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:text="Top Left Parent"
+        android:textColor="@color/white"
+        android:background="@color/purple_200" />
+
+    <TextView
+        android:id="@+id/topRightParent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:text="Top Right Parent"
+        android:textColor="@color/white"
+        android:background="@color/purple_200"
+        android:layout_alignParentEnd="true"/>
+
+
+    <TextView
+        android:id="@+id/bottomRightParent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:text="Bottom Right Parent"
+        android:textColor="@color/white"
+        android:background="@color/purple_200"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"/>
+
+
+    <TextView
+        android:id="@+id/bottomLeftParent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:text="Bottom Left Parent"
+        android:textColor="@color/white"
+        android:background="@color/purple_200"
+        android:layout_alignParentBottom="true"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="2sp"
+        android:text="Between"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:background="@color/purple_200"
+        android:layout_toStartOf="@id/topRightParent"
+        android:layout_toEndOf="@id/topLeftParent"
+        android:layout_below="@id/topRightParent" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/bottomLeft"
+        android:layout_alignEnd="@id/bottomRight"
+        android:layout_below="@id/bottomRight"
+        android:layout_above="@id/bottomLeftParent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2sp"
+            android:text="Centered between 4"
+            android:textColor="@color/white"
+            android:background="@color/purple_200"
+            android:gravity="center"
+            android:layout_gravity="center" />
+
+    </FrameLayout>
+
+</RelativeLayout>

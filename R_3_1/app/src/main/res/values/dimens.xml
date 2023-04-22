@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="marginStartEnd">100dp</dimen>
+    <dimen name="marginTop">300dp</dimen>
+    <dimen name="marginBottom">350dp</dimen>
+    <dimen name="text_marginStart">100dp</dimen>
+    <dimen name="text_marginEnd">50dp</dimen>
+    <dimen name="text_marginTop">500dp</dimen>
+    <dimen name="text_marginBottom">50dp</dimen>
+</resources>
