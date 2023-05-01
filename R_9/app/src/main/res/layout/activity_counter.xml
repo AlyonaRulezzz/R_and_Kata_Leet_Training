@@ -6,7 +6,7 @@
 
 
     <TextView
-        android:id="@+id/CounterTextView"
+        android:id="@+id/counterTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
@@ -28,7 +28,7 @@
         android:text="Increment"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/CounterTextView"
+        app:layout_constraintTop_toBottomOf="@id/counterTextView"
         app:layout_constraintBottom_toTopOf="@id/randomColorButton" />
 
     <Button

@@ -22,19 +22,19 @@ class SimpleState1Activity : AppCompatActivity() {
     }
 
     private fun increment() {
-        var counter = binding.CounterTextView.text.toString().toInt()
+        var counter = binding.counterTextView.text.toString().toInt()
         counter++
-        binding.CounterTextView.setText(counter.toString())
+        binding.counterTextView.text = counter.toString()
     }
 
     private fun setRandomColor() {
         val randomColor = Color.rgb(Random.nextInt(256), Random.nextInt(256), Random.nextInt(256))
-        binding.CounterTextView.setTextColor(randomColor)
+        binding.counterTextView.setTextColor(randomColor)
     }
 
-    private fun switchVisibility() = if (binding.CounterTextView.visibility == VISIBLE)
-        binding.CounterTextView.visibility = INVISIBLE
+    private fun switchVisibility() = if (binding.counterTextView.visibility == VISIBLE)
+        binding.counterTextView.visibility = INVISIBLE
                                     else
-        binding.CounterTextView.visibility = VISIBLE
+        binding.counterTextView.visibility = VISIBLE
 
 }
