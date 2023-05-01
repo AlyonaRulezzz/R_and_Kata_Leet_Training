@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <TextView
+        android:id="@+id/CounterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="56sp"
+        android:textColor="@color/purple_200"
+        android:textStyle="bold"
+        android:fontFamily="casual"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/incrementButton"
+        app:layout_constraintVertical_chainStyle="packed"/>
+
+    <Button
+        android:id="@+id/incrementButton"
+        android:layout_width="@dimen/buttonWidth"
+        android:layout_height="wrap_content"
+        android:text="Increment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/CounterTextView"
+        app:layout_constraintBottom_toTopOf="@id/randomColorButton" />
+
+    <Button
+        android:id="@+id/randomColorButton"
+        android:layout_width="@dimen/buttonWidth"
+        android:layout_height="wrap_content"
+        android:text="Random Color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/incrementButton"
+        app:layout_constraintBottom_toTopOf="@id/switchVisibilityButton" />
+
+    <Button
+        android:id="@+id/switchVisibilityButton"
+        android:layout_width="@dimen/buttonWidth"
+        android:layout_height="wrap_content"
+        android:text="Switch Visibility"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/randomColorButton"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
