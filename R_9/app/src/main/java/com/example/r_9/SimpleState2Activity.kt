@@ -4,6 +4,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.util.Log
 import android.view.View
 import androidx.core.content.ContextCompat
 import com.example.r_9.databinding.ActivityCounterBinding
@@ -38,8 +39,8 @@ class SimpleState2Activity : AppCompatActivity() {
         renderState()
     }
 
-    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
-        super.onSaveInstanceState(outState, outPersistentState)
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
         outState.putInt(KEY_COUNTER, counterValue)
         outState.putInt(KEY_COLOR, counterTextColor)
         outState.putBoolean(KEY_IS_VISIBLE, counterIsVisible)
@@ -61,7 +62,8 @@ class SimpleState2Activity : AppCompatActivity() {
     }
 
     private fun renderState() = with(binding) {
-        counterTextView.setText(counterValue.toString())
+        Log.d("MY_LOG", "renderState: counterValue = $counterValue")
+        counterTextView.text = counterValue.toString()
         counterTextView.setTextColor(counterTextColor)
         counterTextView.visibility = if (counterIsVisible) View.VISIBLE else View.INVISIBLE
     }
