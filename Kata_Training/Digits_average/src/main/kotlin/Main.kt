@@ -1,3 +1,49 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+fun main() {
+
+    fun findDigitAverage(number: String) : Int {
+        var digits = number.map(Character::getNumericValue)
+        while (digits.size > 1) {
+            digits = digits.zipWithNext{ a, b: Int -> (a + b + 1) / 2 }
+            println(digits)
+        }
+        return digits.last()
+    }
+
+    val x = readln()
+    println(findDigitAverage(x))
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Given an integer, take the (mean) average of each pair of consecutive digits. Repeat this process until you have a single integer, then return that integer. e.g.
+//
+//Note: if the average of two digits is not an integer, round the result up (e.g. the average of 8 and 9 will be 9)
+//
+//Examples
+//digitsAverage(246)  ==>  4
+//
+//original: 2   4   6
+//           \ / \ /
+//1st iter:   3   5
+//             \ /
+//2nd iter:     4
+//
+//
+//digitsAverage(89)  ==>  9
+//
+//original: 8   9
+//           \ /
+//1st iter:   9
+//p.s. for a bigger challenge, check out the one line version of this kata by myjinxin2015!
+//
