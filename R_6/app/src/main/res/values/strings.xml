@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">R_6</string>
     <string name="picture">picture</string>
+    <string name="get_image">get image</string>
+    <string name="random_number">random_number</string>
+
 </resources>
