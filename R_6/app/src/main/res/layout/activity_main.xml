@@ -22,6 +22,7 @@
         android:id="@+id/bearPicture"
         android:layout_width="180sp"
         android:layout_height="250sp"
+        android:src="@drawable/bear"
         android:scaleType="centerInside"
         android:contentDescription="@string/picture"
         app:layout_constraintStart_toStartOf="parent"
