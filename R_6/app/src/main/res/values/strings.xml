@@ -4,5 +4,6 @@
     <string name="get_image">get image</string>
     <string name="random_number">random_number</string>
     <string name="enter_keyword">enter keyword</string>
+    <string name="checkbox">Checkbox</string>
 
 </resources>

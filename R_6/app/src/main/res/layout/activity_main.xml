@@ -54,11 +54,12 @@
         app:layout_constraintTop_toBottomOf="@id/buttonGetImage"
         />
 
-    <CheckBox
+    <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Checkbox"
+        android:text="@string/checkbox"
+        android:textColor="@color/purple_200"
         app:layout_constraintStart_toStartOf="@id/buttonGetImage"
         app:layout_constraintTop_toBottomOf="@id/editText"
         />

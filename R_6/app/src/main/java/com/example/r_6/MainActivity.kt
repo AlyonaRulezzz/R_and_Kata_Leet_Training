@@ -111,7 +111,7 @@ class MainActivity : AppCompatActivity() {
             if (useKeyword) {
                 editText.visibility = View.VISIBLE
             } else {
-                editText.visibility = View.GONE
+                editText.visibility = View.INVISIBLE
             }
         }
     }
