@@ -4,6 +4,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import com.bumptech.glide.Glide
@@ -18,6 +19,8 @@ class MainActivity : AppCompatActivity() {
     var flag = false
 
     lateinit var binding: ActivityMainBinding
+    private  var useKeyword : Boolean = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -43,13 +46,22 @@ class MainActivity : AppCompatActivity() {
             longPushOnButton()
         }
 
-        binding.editText.setOnEditorActionListener { textView, i, keyEvent ->
+        binding.editText.setOnEditorActionListener { _, i, _ ->
             if (i == EditorInfo.IME_ACTION_SEARCH) {
                 return@setOnEditorActionListener shortPushOnButton()
             } else {
                 return@setOnEditorActionListener false
             }
         }
+
+//        binding.editText.setText(R.string.picture)
+
+        binding.checkbox.setOnClickListener {
+            useKeyword = binding.checkbox.isChecked
+            updateUi()
+        }
+
+        updateUi()
 
         val currentTextValue = binding.helloWorldTextView.text.toString()
         Log.d("TEST_LOG", "Current text value: $currentTextValue")
@@ -63,9 +75,9 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun shortPushOnButton() : Boolean {
+    private fun shortPushOnButton() : Boolean {
         val keyword = binding.editText.text.toString()
-        if (keyword.isBlank()) {
+        if (useKeyword && keyword.isBlank()) {
             binding.editText.error = "Keyword is empty"
             return true
         }
@@ -86,12 +98,22 @@ class MainActivity : AppCompatActivity() {
         return false
     }
 
-    fun longPushOnButton() : Boolean {
+    private fun longPushOnButton() : Boolean {
         val number = Random.nextInt(1000)
         val message = number.toString()
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
         return true
     }
 
+    private fun updateUi() {
+        with (binding) {
+            checkbox.isChecked = useKeyword
+            if (useKeyword) {
+                editText.visibility = View.VISIBLE
+            } else {
+                editText.visibility = View.GONE
+            }
+        }
+    }
 
 }

@@ -54,4 +54,13 @@
         app:layout_constraintTop_toBottomOf="@id/buttonGetImage"
         />
 
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Checkbox"
+        app:layout_constraintStart_toStartOf="@id/buttonGetImage"
+        app:layout_constraintTop_toBottomOf="@id/editText"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
