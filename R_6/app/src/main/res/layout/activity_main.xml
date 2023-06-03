@@ -92,4 +92,15 @@
 
     </RadioGroup>
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@id/bearPicture"
+        app:layout_constraintEnd_toEndOf="@id/bearPicture"
+        app:layout_constraintTop_toTopOf="@id/bearPicture"
+        app:layout_constraintBottom_toBottomOf="@id/bearPicture"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
