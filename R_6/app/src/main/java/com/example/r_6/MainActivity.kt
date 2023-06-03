@@ -64,6 +64,10 @@ class MainActivity : AppCompatActivity() {
 
         updateUi()
 
+        binding.radioButtonGroup.setOnCheckedChangeListener { _, _ ->
+            shortPushOnButton()
+        }
+
         val currentTextValue = binding.helloWorldTextView.text.toString()
         Log.d("TEST_LOG", "Current text value: $currentTextValue")
 
