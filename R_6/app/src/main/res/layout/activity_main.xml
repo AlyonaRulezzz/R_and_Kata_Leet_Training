@@ -20,8 +20,8 @@
 
     <ImageView
         android:id="@+id/bearPicture"
-        android:layout_width="180sp"
-        android:layout_height="250sp"
+        android:layout_width="260sp"
+        android:layout_height="180sp"
         android:src="@drawable/bear"
         android:scaleType="centerInside"
         android:contentDescription="@string/picture"
@@ -63,5 +63,33 @@
         app:layout_constraintStart_toStartOf="@id/buttonGetImage"
         app:layout_constraintTop_toBottomOf="@id/editText"
         />
+
+    <RadioGroup
+        android:id="@+id/radioButtonGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/radioButtonForest"
+        app:layout_constraintStart_toStartOf="@id/checkbox"
+        app:layout_constraintTop_toBottomOf="@id/checkbox">
+
+        <RadioButton
+            android:id="@+id/radioButtonMoon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Moon"/>
+
+        <RadioButton
+            android:id="@+id/radioButtonForest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forest"/>
+
+        <RadioButton
+            android:id="@+id/radioButtonDog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dog"/>
+
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
