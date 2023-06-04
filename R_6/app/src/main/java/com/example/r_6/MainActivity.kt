@@ -108,13 +108,35 @@ class MainActivity : AppCompatActivity() {
 ////                .into(binding.bearPicture)
 ////        }
 //        return false
-
+//
+//        class Y : RequestListener<Drawable> {
+//            override fun onLoadFailed(
+//                e: GlideException?,
+//                model: Any?,
+//                target: Target<Drawable>?,
+//                isFirstResource: Boolean
+//            ): Boolean {
+//                TODO("Not yet implemented")
+//            }
+//
+//            override fun onResourceReady(
+//                resource: Drawable?,
+//                model: Any?,
+//                target: Target<Drawable>?,
+//                dataSource: DataSource?,
+//                isFirstResource: Boolean
+//            ): Boolean {
+//                TODO("Not yet implemented")
+//            }
+//
+//        }
 //        version 2
         val checkedId = binding.radioButtonGroup.checkedRadioButtonId
         val keyword = binding.radioButtonGroup.findViewById<RadioButton>(checkedId).text.toString()
         val encodedKeyword = URLEncoder.encode(keyword, StandardCharsets.UTF_8.name())
         binding.progressBar.visibility = View.VISIBLE
-        Glide.with(this)
+
+            Glide.with(this)
             .load("https://loremflickr.com/800/600/$encodedKeyword")
 //            .placeholder(R.drawable.bear)
             .listener(
@@ -165,6 +187,10 @@ class MainActivity : AppCompatActivity() {
                 editText.visibility = View.GONE
             }
         }
+    }
+
+    companion object {
+
     }
 
 }
