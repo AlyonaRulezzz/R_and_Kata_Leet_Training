@@ -13,10 +13,13 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.example.r_6_1.databinding.ActivityMainBinding
+import java.net.URLEncoder
+import java.nio.charset.StandardCharsets
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding : ActivityMainBinding
+    private var useKeyword = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,12 +41,29 @@ class MainActivity : AppCompatActivity() {
             shortClick()
         }
 
+        binding.editText.setOnEditorActionListener { textView, i, keyEvent ->
+            if (binding.editText.imeActionId == i) {
+                return@setOnEditorActionListener shortClick()
+            } else {
+                return@setOnEditorActionListener false
+            }
+        }
+
     }
 
     private fun shortClick() : Boolean {
+        val keyword = binding.editText.text.toString()
+        val encodedKeyword = URLEncoder.encode(keyword, StandardCharsets.UTF_8.name())
+
         binding.progressBar.visibility = View.VISIBLE
+
+        if (keyword.isBlank()) {
+            binding.editText.error = "Keyword is empty"
+            return true
+        }
+
         Glide.with(this)
-            .load("https://loremflickr.com/200/200/")
+            .load("https://loremflickr.com/200/200/$encodedKeyword")
             .listener(object : RequestListener<Drawable> {
                 override fun onLoadFailed(
                     e: GlideException?,
@@ -72,7 +92,7 @@ class MainActivity : AppCompatActivity() {
             .skipMemoryCache(true)
             .diskCacheStrategy(DiskCacheStrategy.NONE)
             .into(binding.imageView)
-        return true
+        return false
     }
 
 }
