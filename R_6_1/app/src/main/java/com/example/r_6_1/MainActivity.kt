@@ -20,6 +20,11 @@ class MainActivity : AppCompatActivity() {
             setLines(2)
         }
 
+        with(binding.imageView) {
+            setImageResource(R.drawable.ic_launcher_foreground)
+            setBackgroundResource(R.drawable.ic_launcher_background)
+        }
+
     }
 
 }
